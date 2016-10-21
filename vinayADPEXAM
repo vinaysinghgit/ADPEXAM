@@ -1,0 +1,93 @@
+Question-1 :use C#/.NET or Java to build a simple skeleton web site
+
+Answer :
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Vinay JSP tutorial exam</title>
+</head>
+<body>
+    <%= "Hello World!" %>
+</body>
+</html>
+
+
+Question 2 :  use MS technology stack to write a build script that packages the deployment contents that target different env.
+
+I dont know much about MS technology but writing maven which server same purpose
+steps
+Breaking down the build and deploy processes
+Ensuring the entire application builds and if they exist, unit tests pass.
+Creating a package of the web app and publishing it to IIS via Web Deploy.
+Create a custom build file with separate targets to package and then deploy
+Setting the TeamCity build agent service account
+Configuring the new build runner
+Running the package and deploy build
+Passing parameters to the build and deploying to other environments
+
+example:
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.adobe.example</groupId>
+  <artifactId>example-package</artifactId>
+  <version>0.0.7-SNAPSHOT</version>
+    <build>
+        <plugins>
+        <plugin>
+        <groupId>my groupid</groupId>
+        <artifactId>content-package-maven-plugin</artifactId>
+        <version>0.0.01</version>
+        <configuration>
+            <targetURL>http://my url</targetURL>
+        </configuration>
+         </plugin>
+      </plugins>
+     </build>
+</project>
+
+Question 3 : use whatever language/format and tools you are most comfortable with to write script that install the build package
+general installation procedure will therefore be:
+
+Read the README file and other applicable docs.
+Run xmkmf -a, or the INSTALL or configure script.
+Check the Makefile.
+If necessary, run make clean, make Makefiles, make includes, and make depend.
+Run make.
+Check file permissions.
+If necessary, run make install.
+
+example:
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+ 
+  <groupId>www.abc.com</groupId>
+  <artifactId>myartifact-id</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+ 
+  <name>My Maven Project</name>
+  <url>http://maven.apache.org</url>
+ 
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.8.2</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
+
+Question 4 : How to push the code to www.github.com then share the link
+
+Answer 
+We use git push command to push the code
+
+git push origin master
